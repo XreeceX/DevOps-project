@@ -1,17 +1,16 @@
-# Use Python official image
+# Use a lightweight version of Python as the base image
 FROM python:3.12
 
-# Set the working directory
-WORKDIR /DEVOPS PROJECT
+# Set the working directory in the container
+WORKDIR "/DEVOPS PROJECT"
 
-# Copy project files
-COPY . .
-
-# Install dependencies
+# Copy the dependencies file and install them
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port (for API)
-EXPOSE 5000
+# Copy the source code and data into the container
+COPY src/ ./src/
+COPY data/ ./data/
 
-# Run the application
-CMD ["python", "Fraud Detection.py"]
+# Set the command to run your application
+CMD ["python", "src/Fraud_Detection.py"]
