@@ -19,3 +19,5 @@ sklearn-compat==0.1.3
 threadpoolctl==3.6.0
 tzdata==2025.2
 urllib3==2.3.0
+matplotlib
+seaborn
