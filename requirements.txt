@@ -6,7 +6,6 @@ imbalanced-learn==0.13.0
 joblib==1.4.2
 numpy==2.2.4
 openpyxl==3.1.5
-panda==0.3.1
 pandas==2.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
