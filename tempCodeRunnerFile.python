@@ -1,8 +1,0 @@
-def iLoveYou(reece):
-    sum=0
-    for anika in reece:
-        sum+=anika
-    return sum
-
-reece=[1,4,3,35,9]
-print("I loveeeee i loveee heerrrr....",iLoveYou(reece))
