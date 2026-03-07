@@ -165,7 +165,7 @@ def evaluate_model(
 
 def print_results(label: str, metrics: dict, use_smote: bool) -> None:
     """Print formatted model results."""
-    emoji = "✅" if use_smote else "❌"
+    emoji = "[SMOTE]" if use_smote else "[no SMOTE]"
     print("=" * 50)
     print(f"{emoji} {label}")
     print("=" * 50)
@@ -306,7 +306,7 @@ def main() -> None:
     comparison_path = OUTPUT_DIR / "smote_vs_no_smote_comparison.csv"
     results_df.to_csv(comparison_path, index=False)
 
-    print(f"\n📊 Comparison saved to: {comparison_path}")
+    print(f"\nComparison saved to: {comparison_path}")
     print(f"📁 Output directory: {OUTPUT_DIR}")
 
 
