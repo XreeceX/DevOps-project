@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
   title: "Fraud Detection | DevOps Project",
@@ -12,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
+      <body className="min-h-screen bg-[#fafbfc] font-sans antialiased text-zinc-800">
+        {children}
+      </body>
     </html>
   );
 }
