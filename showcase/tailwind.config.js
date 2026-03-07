@@ -7,17 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Syne", "system-ui", "sans-serif"],
+      },
       colors: {
-        ink: "#0a0f1f",
-        panel: "#0f162e",
+        ink: "#050810",
+        panel: "#0c1220",
         muted: "#94a3b8",
         mutedLight: "#cbd5e1",
-        accent: "#4f7cff",
-        accentSoft: "#93c5fd",
+        accent: "#6366f1",
+        accentSoft: "#a5b4fc",
       },
       boxShadow: {
-        glow: "0 8px 30px rgba(79, 124, 255, 0.25)",
-        card: "0 10px 30px rgba(3, 8, 20, 0.35)",
+        glow: "0 8px 30px rgba(99, 102, 241, 0.2)",
+        card: "0 4px 24px rgba(0, 0, 0, 0.4)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
