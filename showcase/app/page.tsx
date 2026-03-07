@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 const TECH = ["Scikit-learn", "SMOTE", "RandomForest", "Docker", "Model Evaluation"];
 const ACHIEVEMENTS = [
   "Compared fraud models with and without SMOTE to handle class imbalance.",
@@ -138,13 +136,12 @@ function VizCard({ title, img, alt }: { title: string; img: string; alt: string 
       <div className="border-b border-zinc-800 px-4 py-3">
         <h3 className="text-sm font-medium text-zinc-200">{title}</h3>
       </div>
-      <div className="relative aspect-[4/3] bg-zinc-800/50 p-4">
-        <Image
+      <div className="relative flex aspect-[4/3] items-center justify-center bg-white p-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={img}
           alt={alt}
-          fill
-          className="object-contain"
-          unoptimized
+          className="max-h-full max-w-full object-contain"
           onError={(e) => {
             e.currentTarget.style.display = "none";
             const placeholder = e.currentTarget.nextElementSibling;
@@ -152,7 +149,7 @@ function VizCard({ title, img, alt }: { title: string; img: string; alt: string 
           }}
         />
         <div
-          className="absolute inset-0 hidden items-center justify-center p-6 text-center"
+          className="absolute inset-0 hidden items-center justify-center bg-zinc-800/50 p-6 text-center"
           style={{ display: "none" }}
         >
           <p className="text-sm text-zinc-500">
