@@ -1,0 +1,8 @@
+{
+  "name": "fraud-detection-devops",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-showcase.js",
+    "build:showcase": "cd showcase && npm run build"
+  }
+}

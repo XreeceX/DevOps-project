@@ -48,9 +48,16 @@ DROP_COLUMNS = ["Customer Name", "Customer Email", "Customer Phone", "Transactio
 # Data Loading & Preprocessing
 # -----------------------------------------------------------------------------
 def load_data(path: Path) -> pd.DataFrame:
-    """Load and validate fraud detection dataset."""
+    """Load and validate fraud detection dataset. Uses demo data if file not found."""
     if not path.exists():
-        raise FileNotFoundError(f"Data file not found: {path}")
+        # Generate demo data for showcase/CI when real data is unavailable
+        path.parent.mkdir(parents=True, exist_ok=True)
+        sys.path.insert(0, str(PROJECT_ROOT))
+        from scripts.generate_demo_data import generate_demo_data
+        df = generate_demo_data()
+        df.to_excel(path, index=False)
+        print(f"Using demo data (real file not found): {path}")
+        return df
     df = pd.read_excel(path)
     if df.empty:
         raise ValueError("Dataset is empty")
@@ -179,12 +186,14 @@ def main() -> None:
     # Setup output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Load data
-    try:
+    # Load data (use demo data if real dataset not found - for showcase/CI)
+    if DATA_PATH.exists():
         df = load_data(DATA_PATH)
-    except (FileNotFoundError, ValueError) as e:
-        print(f"Error: {e}", file=sys.stderr)
-        sys.exit(1)
+    else:
+        print("Data file not found. Generating demo data for showcase...", file=sys.stderr)
+        sys.path.insert(0, str(PROJECT_ROOT))
+        from scripts.generate_demo_data import generate_demo_data
+        df = generate_demo_data(n_samples=2000, output_path=DATA_PATH)
 
     X, y = preprocess_data(df)
 

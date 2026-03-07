@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "showcase/out",
+  "installCommand": "cd showcase && npm install"
+}
