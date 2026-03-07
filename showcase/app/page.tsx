@@ -138,8 +138,27 @@ function VizCard({ title, img, alt }: { title: string; img: string; alt: string 
       <div className="border-b border-zinc-800 px-4 py-3">
         <h3 className="text-sm font-medium text-zinc-200">{title}</h3>
       </div>
-      <div className="relative aspect-[4/3] bg-white p-4">
-        <Image src={img} alt={alt} fill className="object-contain" unoptimized />
+      <div className="relative aspect-[4/3] bg-zinc-800/50 p-4">
+        <Image
+          src={img}
+          alt={alt}
+          fill
+          className="object-contain"
+          unoptimized
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+            const placeholder = e.currentTarget.nextElementSibling;
+            if (placeholder) (placeholder as HTMLElement).style.display = "flex";
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden items-center justify-center p-6 text-center"
+          style={{ display: "none" }}
+        >
+          <p className="text-sm text-zinc-500">
+            Run <code className="rounded bg-zinc-700 px-1.5 py-0.5 font-mono text-xs">python src/Fraud_Detection.py</code> then copy <code className="rounded bg-zinc-700 px-1.5 py-0.5 font-mono text-xs">static/*.png</code> to <code className="rounded bg-zinc-700 px-1.5 py-0.5 font-mono text-xs">showcase/public/</code>
+          </p>
+        </div>
       </div>
     </div>
   );

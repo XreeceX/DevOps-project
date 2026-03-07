@@ -16,3 +16,11 @@ A recruiter-friendly showcase is included for deployment to Vercel:
 2. **Optional**: Set `NEXT_PUBLIC_GITHUB_REPO` in Vercel project settings to your GitHub repo URL for the "GitHub Repo" button.
 
 3. **Local preview**: Run `npm run build` from the project root, then open `showcase/out/index.html` or run `npx serve showcase/out`.
+
+4. **Regenerate showcase images**: If charts are missing on the deployed site, run:
+   ```bash
+   pip install -r requirements.txt
+   python src/Fraud_Detection.py
+   # Then copy static/*.png to showcase/public/
+   ```
+   Or on Windows: `scripts\regenerate-showcase-images.bat`
