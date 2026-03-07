@@ -14,10 +14,10 @@ export default function ShowcasePage() {
     <div className="relative min-h-screen mesh-bg">
       {/* Nav - portfolio-style glass */}
       <nav className="sticky top-0 z-50 px-4 pt-4">
-        <div className="glass-nav mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-2xl border border-white/10 px-4 shadow-card md:px-6">
+        <div className="glass-nav mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-2xl border border-white/20 px-4 shadow-card md:px-6">
           <a
             href="https://reece-rodrigues.vercel.app/"
-            className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+            className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white"
           >
             <span className="transition-transform group-hover:-translate-x-0.5">←</span>
             Back to Portfolio
@@ -27,7 +27,7 @@ export default function ShowcasePage() {
 
       <main className="relative z-10 mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         {/* // 01 — Overview - portfolio project card style */}
-        <section className="group relative mb-16 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-8 shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-accent/50 sm:p-10">
+        <section className="group relative mb-16 overflow-hidden rounded-2xl border border-white/20 bg-white/[0.06] p-8 shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-accent/50 sm:p-10">
           <span className="section-header-accent ml-0" aria-hidden />
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent md:text-sm">
             // 01 — Overview
@@ -38,7 +38,7 @@ export default function ShowcasePage() {
           <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
             Case Study 5 · DevOps Project
           </p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-mutedLight md:text-lg">
             ML-powered fraud detection for banking transactions. Uses SMOTE to address class imbalance
             and RandomForest for robust predictions—containerized for reproducible deployment.
           </p>
@@ -46,7 +46,7 @@ export default function ShowcasePage() {
             {TECH.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
+                className="rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-xs font-medium text-slate-200"
               >
                 {t}
               </span>
@@ -74,10 +74,10 @@ export default function ShowcasePage() {
             {ACHIEVEMENTS.map((a, i) => (
               <li
                 key={i}
-                className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 transition hover:border-accent/40 hover:bg-white/[0.04]"
+                className="flex gap-4 rounded-2xl border border-white/20 bg-white/[0.06] px-6 py-5 transition hover:border-accent/40 hover:bg-white/[0.08]"
               >
                 <span className="text-accent">▹</span>
-                <span className="text-muted leading-relaxed">{a}</span>
+                <span className="text-slate-200 leading-relaxed">{a}</span>
               </li>
             ))}
           </ul>
@@ -90,7 +90,7 @@ export default function ShowcasePage() {
             // 03 — Model Results
           </p>
           <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">SMOTE vs Baseline</h2>
-          <p className="mt-3 text-muted">
+          <p className="mt-3 text-slate-200">
             RandomForest performance with and without SMOTE resampling.
           </p>
 
@@ -135,10 +135,10 @@ export default function ShowcasePage() {
         </section>
 
         {/* Footer - portfolio style */}
-        <footer className="border-t border-white/10 py-10">
+        <footer className="border-t border-white/20 py-10">
           <a
             href="https://reece-rodrigues.vercel.app/"
-            className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted transition hover:bg-white/5 hover:text-accentSoft"
+            className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
           >
             <span className="transition-transform group-hover:-translate-x-0.5">←</span>
             Back to Reece Rodrigues
@@ -151,11 +151,11 @@ export default function ShowcasePage() {
 
 function VizCard({ title, img, alt }: { title: string; img: string; alt: string }) {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-card transition duration-200 hover:-translate-y-1 hover:border-accent/50">
-      <div className="border-b border-white/10 bg-white/[0.03] px-5 py-4">
-        <h3 className="text-sm font-semibold text-white">{title}</h3>
+    <div className="group overflow-hidden rounded-2xl border border-white/20 bg-white/[0.06] shadow-card transition duration-200 hover:-translate-y-1 hover:border-accent/50">
+      <div className="border-b border-white/20 bg-white/[0.06] px-5 py-4">
+        <h3 className="text-base font-semibold text-white">{title}</h3>
       </div>
-      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-panel/80 p-5">
+      <div className="relative flex min-h-[240px] aspect-[4/3] items-center justify-center overflow-hidden bg-slate-800/95 p-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={img}
@@ -168,11 +168,12 @@ function VizCard({ title, img, alt }: { title: string; img: string; alt: string 
           }}
         />
         <div
-          className="absolute inset-0 hidden items-center justify-center bg-panel/95 p-6 text-center backdrop-blur-sm"
+          className="absolute inset-0 hidden flex-col items-center justify-center gap-3 bg-slate-700/95 p-6 text-center"
           style={{ display: "none" }}
         >
-          <p className="text-sm text-muted">
-            Run <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">python src/Fraud_Detection.py</code> then copy <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">static/*.png</code> to <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">showcase/public/</code>
+          <p className="text-sm font-medium text-slate-200">Charts not generated yet</p>
+          <p className="max-w-sm text-sm leading-relaxed text-slate-300">
+            Run <code className="rounded bg-slate-600 px-2 py-1 font-mono text-xs text-accentSoft">python src/Fraud_Detection.py</code> then copy <code className="rounded bg-slate-600 px-2 py-1 font-mono text-xs text-accentSoft">static/*.png</code> to <code className="rounded bg-slate-600 px-2 py-1 font-mono text-xs text-accentSoft">showcase/public/</code>
           </p>
         </div>
       </div>

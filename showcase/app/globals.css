@@ -2,31 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio-style mesh background */
+/* Mesh background - balanced for contrast */
 .mesh-bg {
   background:
-    radial-gradient(45rem 30rem at -10% -10%, rgba(79, 124, 255, 0.24), transparent 60%),
-    radial-gradient(35rem 20rem at 95% 5%, rgba(114, 137, 255, 0.22), transparent 55%),
-    radial-gradient(38rem 24rem at 50% 120%, rgba(46, 73, 170, 0.2), transparent 55%),
-    #070b17;
+    radial-gradient(45rem 30rem at -10% -10%, rgba(79, 124, 255, 0.18), transparent 60%),
+    radial-gradient(35rem 20rem at 95% 5%, rgba(114, 137, 255, 0.15), transparent 55%),
+    radial-gradient(38rem 24rem at 50% 120%, rgba(46, 73, 170, 0.12), transparent 55%),
+    #0c1220;
 }
 
-/* Dot grid overlay (portfolio-style) */
+/* Dot grid overlay - subtle for readability */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 0.06;
   z-index: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 0.6px, transparent 0.6px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.6px, transparent 0.6px);
   background-size: 4px 4px;
 }
 
-/* Glass nav (portfolio-style) */
+/* Glass nav - solid enough for visibility */
 .glass-nav {
-  background: rgba(10, 16, 33, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(12, 18, 36, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Section header accent line */

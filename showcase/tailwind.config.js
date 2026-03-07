@@ -10,9 +10,10 @@ module.exports = {
       colors: {
         ink: "#0a0f1f",
         panel: "#0f162e",
-        muted: "#95a0b8",
+        muted: "#94a3b8",
+        mutedLight: "#cbd5e1",
         accent: "#4f7cff",
-        accentSoft: "#9ab4ff",
+        accentSoft: "#93c5fd",
       },
       boxShadow: {
         glow: "0 8px 30px rgba(79, 124, 255, 0.25)",
