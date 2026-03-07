@@ -3,17 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-space-grotesk: "Space Grotesk", system-ui, sans-serif;
-    --accent: #22c55e;
-    --accent-dim: #16a34a;
-  }
   body {
-    background-color: #0c1222;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 64px 64px;
-    background-position: 0 0, 0 0;
+    background-color: #09090b; /* zinc-950 */
   }
 }
