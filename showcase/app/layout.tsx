@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#0a0a0c] font-sans antialiased text-zinc-100">
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} min-h-screen bg-ink text-[#e6ecff] antialiased`}>
         {children}
       </body>
     </html>

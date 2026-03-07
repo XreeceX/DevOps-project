@@ -7,14 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      colors: {
+        ink: "#0a0f1f",
+        panel: "#0f162e",
+        muted: "#95a0b8",
+        accent: "#4f7cff",
+        accentSoft: "#9ab4ff",
+      },
+      boxShadow: {
+        glow: "0 8px 30px rgba(79, 124, 255, 0.25)",
+        card: "0 10px 30px rgba(3, 8, 20, 0.35)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
-        "glow-pulse": "glowPulse 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -25,17 +31,6 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        glowPulse: {
-          "0%, 100%": { opacity: "0.5" },
-          "50%": { opacity: "0.8" },
-        },
-      },
-      backgroundImage: {
-        "grid-pattern": "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
-      backgroundSize: {
-        grid: "48px 48px",
       },
     },
   },

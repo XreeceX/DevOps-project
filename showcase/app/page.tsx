@@ -11,16 +11,13 @@ export default function ShowcasePage() {
   const githubUrl = process.env.NEXT_PUBLIC_GITHUB_REPO || "https://github.com/XreeceX/DevOps-project";
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0c] noise-overlay">
-      {/* Subtle grid background */}
-      <div className="fixed inset-0 bg-grid-pattern bg-grid opacity-40" aria-hidden />
-
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0c]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <div className="relative min-h-screen mesh-bg">
+      {/* Nav - portfolio-style glass */}
+      <nav className="sticky top-0 z-50 px-4 pt-4">
+        <div className="glass-nav mx-auto flex h-14 max-w-[1200px] items-center justify-between rounded-2xl border border-white/10 px-4 shadow-card md:px-6">
           <a
             href="https://reece-rodrigues.vercel.app/"
-            className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition hover:bg-white/[0.04] hover:text-white"
+            className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
           >
             <span className="transition-transform group-hover:-translate-x-0.5">←</span>
             Back to Portfolio
@@ -28,29 +25,28 @@ export default function ShowcasePage() {
         </div>
       </nav>
 
-      <main className="relative z-10 mx-auto max-w-4xl px-6 py-16 sm:py-24">
-        {/* // 01 — Overview */}
-        <section className="group relative mb-28 overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-8 sm:p-12 transition-colors hover:border-cyan-500/20">
-          <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-cyan-500/[0.07] blur-3xl transition-opacity group-hover:bg-cyan-500/[0.12]" />
-          <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-emerald-500/[0.04] blur-2xl" />
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-cyan-400/90">
+      <main className="relative z-10 mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        {/* // 01 — Overview - portfolio project card style */}
+        <section className="group relative mb-16 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-8 shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-accent/50 sm:p-10">
+          <span className="section-header-accent ml-0" aria-hidden />
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent md:text-sm">
             // 01 — Overview
           </p>
-          <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Fraud Detection
           </h1>
-          <p className="mt-3 text-sm font-medium uppercase tracking-widest text-zinc-500">
+          <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
             Case Study 5 · DevOps Project
           </p>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
             ML-powered fraud detection for banking transactions. Uses SMOTE to address class imbalance
             and RandomForest for robust predictions—containerized for reproducible deployment.
           </p>
-          <div className="mt-8 flex flex-wrap gap-2.5">
+          <div className="mt-8 flex flex-wrap gap-2">
             {TECH.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-cyan-500/30 hover:bg-cyan-500/10 hover:text-cyan-300"
+                className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
               >
                 {t}
               </span>
@@ -60,7 +56,7 @@ export default function ShowcasePage() {
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn mt-10 inline-flex items-center gap-2 rounded-xl bg-cyan-500/15 px-5 py-3 text-sm font-semibold text-cyan-400 ring-1 ring-cyan-500/25 transition hover:bg-cyan-500/25 hover:ring-cyan-500/40 hover:text-cyan-300"
+            className="group/btn mt-10 inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white shadow-glow transition duration-200 hover:brightness-110"
           >
             View Code
             <span className="transition-transform group-hover/btn:translate-x-0.5">→</span>
@@ -68,38 +64,37 @@ export default function ShowcasePage() {
         </section>
 
         {/* // 02 — Key Achievements */}
-        <section className="mb-28">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-cyan-400/90">
+        <section className="mb-16">
+          <span className="section-header-accent ml-0 mr-auto" aria-hidden />
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent md:text-sm">
             // 02 — Key Achievements
           </p>
-          <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">What I Built</h2>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-1">
+          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">What I Built</h2>
+          <ul className="mt-8 space-y-4">
             {ACHIEVEMENTS.map((a, i) => (
               <li
                 key={i}
-                className="group flex gap-5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-6 py-5 animate-fade-in-up transition hover:border-cyan-500/20 hover:bg-white/[0.04]"
-                style={{ animationDelay: `${i * 80}ms`, opacity: 0 }}
+                className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 transition hover:border-accent/40 hover:bg-white/[0.04]"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 font-mono text-sm font-semibold text-cyan-400 ring-1 ring-cyan-500/20">
-                  {i + 1}
-                </span>
-                <span className="text-zinc-300 leading-relaxed">{a}</span>
+                <span className="text-accent">▹</span>
+                <span className="text-muted leading-relaxed">{a}</span>
               </li>
             ))}
           </ul>
         </section>
 
         {/* // 03 — Model Results */}
-        <section className="mb-28">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-cyan-400/90">
+        <section className="mb-16">
+          <span className="section-header-accent ml-0 mr-auto" aria-hidden />
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent md:text-sm">
             // 03 — Model Results
           </p>
-          <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">SMOTE vs Baseline</h2>
-          <p className="mt-3 text-zinc-400">
+          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">SMOTE vs Baseline</h2>
+          <p className="mt-3 text-muted">
             RandomForest performance with and without SMOTE resampling.
           </p>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <VizCard
               title="Class Distribution (Original)"
               img="/original_class_dist.png"
@@ -112,7 +107,7 @@ export default function ShowcasePage() {
             />
           </div>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <VizCard
               title="Confusion Matrix (Without SMOTE)"
               img="/confusion_matrix_no_smote.png"
@@ -125,7 +120,7 @@ export default function ShowcasePage() {
             />
           </div>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <VizCard
               title="ROC Curve (Without SMOTE)"
               img="/roc_curve_no_smote.png"
@@ -139,11 +134,11 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-white/[0.06] py-12">
+        {/* Footer - portfolio style */}
+        <footer className="border-t border-white/10 py-10">
           <a
             href="https://reece-rodrigues.vercel.app/"
-            className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-500 transition hover:bg-white/[0.04] hover:text-cyan-400"
+            className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted transition hover:bg-white/5 hover:text-accentSoft"
           >
             <span className="transition-transform group-hover:-translate-x-0.5">←</span>
             Back to Reece Rodrigues
@@ -156,16 +151,16 @@ export default function ShowcasePage() {
 
 function VizCard({ title, img, alt }: { title: string; img: string; alt: string }) {
   return (
-    <div className="group overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] shadow-lg transition-all duration-300 hover:border-cyan-500/25 hover:shadow-cyan-500/5 hover:shadow-xl">
-      <div className="border-b border-white/[0.06] bg-white/[0.03] px-5 py-4">
-        <h3 className="text-sm font-semibold text-zinc-100">{title}</h3>
+    <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-card transition duration-200 hover:-translate-y-1 hover:border-accent/50">
+      <div className="border-b border-white/10 bg-white/[0.03] px-5 py-4">
+        <h3 className="text-sm font-semibold text-white">{title}</h3>
       </div>
-      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-zinc-900/80 p-5">
+      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-panel/80 p-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={img}
           alt={alt}
-          className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="max-h-full max-w-full object-contain transition duration-300 group-hover:scale-[1.03]"
           onError={(e) => {
             e.currentTarget.style.display = "none";
             const placeholder = e.currentTarget.nextElementSibling;
@@ -173,11 +168,11 @@ function VizCard({ title, img, alt }: { title: string; img: string; alt: string 
           }}
         />
         <div
-          className="absolute inset-0 hidden items-center justify-center bg-zinc-900/95 p-6 text-center backdrop-blur-sm"
+          className="absolute inset-0 hidden items-center justify-center bg-panel/95 p-6 text-center backdrop-blur-sm"
           style={{ display: "none" }}
         >
-          <p className="text-sm text-zinc-400">
-            Run <code className="rounded bg-white/[0.08] px-2 py-1 font-mono text-xs text-cyan-400/90">python src/Fraud_Detection.py</code> then copy <code className="rounded bg-white/[0.08] px-2 py-1 font-mono text-xs text-cyan-400/90">static/*.png</code> to <code className="rounded bg-white/[0.08] px-2 py-1 font-mono text-xs text-cyan-400/90">showcase/public/</code>
+          <p className="text-sm text-muted">
+            Run <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">python src/Fraud_Detection.py</code> then copy <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">static/*.png</code> to <code className="rounded bg-white/10 px-2 py-1 font-mono text-xs text-accentSoft">showcase/public/</code>
           </p>
         </div>
       </div>
