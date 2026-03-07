@@ -4,9 +4,16 @@
 
 @layer base {
   :root {
-    --font-outfit: "Outfit", system-ui, sans-serif;
+    --font-space-grotesk: "Space Grotesk", system-ui, sans-serif;
+    --accent: #22c55e;
+    --accent-dim: #16a34a;
   }
   body {
-    font-family: var(--font-outfit);
+    background-color: #0c1222;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: 0 0, 0 0;
   }
 }

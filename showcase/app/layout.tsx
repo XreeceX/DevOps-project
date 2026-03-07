@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#fafbfc] font-sans antialiased text-zinc-800">
+    <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
+      <body className="min-h-screen bg-[#0c1222] font-sans antialiased text-zinc-100">
         {children}
       </body>
     </html>
