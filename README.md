@@ -4,6 +4,10 @@
 2. Run `docker run -p 8000:8000 fraud-detection-app`
 3. View the graphs in the `static` folder
 
+> **UI note:** the showcase site now includes a light/dark theme toggle in the top
+> right corner. The default theme respects your system preference but you can
+> switch manually when previewing locally.
+
 ## Showcase (Vercel Deployment)
 
 A recruiter-friendly showcase is included for deployment to Vercel:

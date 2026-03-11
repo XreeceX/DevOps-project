@@ -1,5 +1,7 @@
 "use client";
 
+import ThemeToggle from "../components/ThemeToggle";
+
 const TECH = ["Scikit-learn", "SMOTE", "RandomForest", "Docker", "Model Evaluation"];
 const ACHIEVEMENTS = [
   "Compared fraud models with and without SMOTE to handle class imbalance.",
@@ -15,18 +17,21 @@ export default function ShowcasePage() {
       {/* Nav - matches portfolio */}
       <header className="portfolio-nav sticky top-0 z-50">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <a
-            href="https://reece-rodrigues.vercel.app/"
-            className="flex items-center gap-2 font-display text-lg font-semibold text-white transition hover:text-accent"
-          >
-            RR
-          </a>
-          <a
-            href="https://reece-rodrigues.vercel.app/"
-            className="flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
-          >
-            ← Back to Portfolio
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://reece-rodrigues.vercel.app/"
+              className="flex items-center gap-2 font-display text-lg font-semibold text-zinc-900 dark:text-white transition hover:text-accent"
+            >
+              RR
+            </a>
+            <a
+              href="https://reece-rodrigues.vercel.app/"
+              className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 transition hover:text-zinc-900 dark:hover:text-white"
+            >
+              ← Back to Portfolio
+            </a>
+          </div>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -34,13 +39,13 @@ export default function ShowcasePage() {
         {/* Hero - // 01 — Overview */}
         <section className="mb-24">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">// 01 — Overview</p>
-          <h1 className="mt-4 font-display text-5xl font-bold tracking-tight text-white sm:text-6xl">
+          <h1 className="mt-4 font-display text-5xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-6xl">
             Fraud Detection
           </h1>
-          <p className="mt-2 text-sm uppercase tracking-widest text-zinc-500">
+          <p className="mt-2 text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
             Case Study 5 · DevOps Project
           </p>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-400">
             ML-powered fraud detection for banking transactions. Uses SMOTE to address class imbalance
             and RandomForest for robust predictions—containerized for reproducible deployment.
           </p>
@@ -67,10 +72,10 @@ export default function ShowcasePage() {
         {/* // 02 — Key Achievements */}
         <section className="mb-24">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">// 02 — Key Achievements</p>
-          <h2 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">What I Built</h2>
+          <h2 className="mt-4 font-display text-2xl font-bold text-zinc-900 dark:text-white sm:text-3xl">What I Built</h2>
           <ul className="mt-8 space-y-4">
             {ACHIEVEMENTS.map((a, i) => (
-              <li key={i} className="flex gap-4 text-zinc-400">
+              <li key={i} className="flex gap-4 text-zinc-700 dark:text-zinc-400">
                 <span className="text-accent">▹</span>
                 <span>{a}</span>
               </li>
@@ -81,8 +86,8 @@ export default function ShowcasePage() {
         {/* // 03 — Model Results */}
         <section>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">// 03 — Model Results</p>
-          <h2 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">SMOTE vs Baseline</h2>
-          <p className="mt-2 text-zinc-400">
+          <h2 className="mt-4 font-display text-2xl font-bold text-zinc-900 dark:text-white sm:text-3xl">SMOTE vs Baseline</h2>
+          <p className="mt-2 text-zinc-700 dark:text-zinc-400">
             RandomForest performance with and without SMOTE resampling.
           </p>
 
@@ -101,15 +106,15 @@ export default function ShowcasePage() {
         </section>
 
         {/* Footer - matches portfolio */}
-        <footer className="mt-24 border-t border-white/10 pt-12">
+        <footer className="mt-24 border-t border-zinc-200 dark:border-white/10 pt-12">
           <a
             href="https://reece-rodrigues.vercel.app/"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-white"
+            className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-500 transition hover:text-zinc-900 dark:hover:text-white"
           >
             ← Back to Reece Rodrigues
           </a>
-          <p className="mt-6 text-sm text-zinc-600">© 2026 Reece Rodrigues. Crafted with intent.</p>
-          <p className="mt-1 text-xs text-zinc-600">London, UK · AI Engineer & Full-Stack Developer</p>
+          <p className="mt-6 text-sm text-zinc-700 dark:text-zinc-600">© 2026 Reece Rodrigues. Crafted with intent.</p>
+          <p className="mt-1 text-xs text-zinc-700 dark:text-zinc-600">London, UK · AI Engineer & Full-Stack Developer</p>
         </footer>
       </main>
     </div>
@@ -118,16 +123,16 @@ export default function ShowcasePage() {
 
 function VizCard({ title, img, alt }: { title: string; img: string; alt: string }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]">
-      <div className="border-b border-white/10 px-5 py-4">
-        <h3 className="font-display font-semibold text-white">{title}</h3>
+    <div className="overflow-hidden rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/[0.02]">
+      <div className="border-b border-zinc-200 dark:border-white/10 px-5 py-4">
+        <h3 className="font-display font-semibold text-zinc-900 dark:text-white">{title}</h3>
       </div>
-      <div className="relative flex min-h-[200px] items-center justify-center bg-zinc-900/50 p-6">
+      <div className="relative flex min-h-[200px] items-center justify-center bg-zinc-100 dark:bg-zinc-900/50 p-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={img}
           alt={alt}
-          className="max-h-full max-w-full object-contain"
+          className="w-full h-auto object-contain"
           onError={(e) => {
             e.currentTarget.style.display = "none";
             const placeholder = e.currentTarget.nextElementSibling;

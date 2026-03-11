@@ -30,7 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#0a0a0f] font-sans text-zinc-300 antialiased">
+      {/* ensure correct theme before React hydrates */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-[#0a0a0f] font-sans text-zinc-900 dark:text-zinc-300 antialiased">
         {children}
       </body>
     </html>

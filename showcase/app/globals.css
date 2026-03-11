@@ -4,6 +4,15 @@
 
 /* Portfolio-style background */
 .portfolio-bg {
+  /* light default */
+  background-color: #f9fafb;
+  background-image:
+    radial-gradient(ellipse 100% 80% at 50% -20%, rgba(251, 191, 36, 0.08), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(251, 191, 36, 0.04), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(251, 191, 36, 0.04), transparent 50%);
+}
+
+.dark .portfolio-bg {
   background-color: #0a0a0f;
   background-image:
     radial-gradient(ellipse 100% 80% at 50% -20%, rgba(251, 191, 36, 0.08), transparent 50%),
@@ -13,8 +22,13 @@
 
 /* Nav bar - matches portfolio glass style */
 .portfolio-nav {
-  background: rgba(10, 10, 15, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .portfolio-nav {
+  background: rgba(10, 10, 15, 0.8);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
