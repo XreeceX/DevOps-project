@@ -1,5 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "showcase/out",
-  "installCommand": "cd showcase && npm install"
+  // when deploying from the repo root, ensure Vercel knows which
+  // subdirectory contains the Next.js application.  The CLI will then
+  // automatically run `npm install` and `npm run build` inside that folder.
+  "rootDirectory": "showcase"
 }
