@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // remove `output: 'export'` so Vercel can use its default build output
+  // which produces the required routes-manifest.json in .next.
   images: { unoptimized: true },
 };
 
