@@ -142,6 +142,7 @@ export default function ShowcasePage() {
             <div className="grid gap-8 sm:grid-cols-2">
               <VizCard title="Without SMOTE" subtitle="High false negatives due to imbalance" img="/confusion_matrix_no_smote.png" alt="Confusion matrix without SMOTE" accent={false} />
               <VizCard title="With SMOTE" subtitle="Improved fraud detection capability" img="/confusion_matrix.png" alt="Confusion matrix with SMOTE" accent={true} />
+            </div>
           </div>
 
           {/* ROC Curves Comparison */}
