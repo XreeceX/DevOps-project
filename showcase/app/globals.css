@@ -6,11 +6,31 @@
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -20,6 +40,33 @@
   }
   50% {
     box-shadow: 0 0 30px rgba(251, 191, 36, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 
@@ -73,15 +120,15 @@
 
 /* Smooth fade-in for elements */
 main > section {
-  animation: fade-in-up 0.6s ease-out forwards;
+  animation: fade-in-up 0.7s ease-out forwards;
   opacity: 0;
 }
 
-main > section:nth-child(1) { animation-delay: 0.1s; }
-main > section:nth-child(2) { animation-delay: 0.2s; }
-main > section:nth-child(3) { animation-delay: 0.3s; }
-main > section:nth-child(4) { animation-delay: 0.4s; }
-main > section:nth-child(5) { animation-delay: 0.5s; }
+main > section:nth-child(1) { animation-delay: 0.15s; }
+main > section:nth-child(2) { animation-delay: 0.3s; }
+main > section:nth-child(3) { animation-delay: 0.45s; }
+main > section:nth-child(4) { animation-delay: 0.6s; }
+main > section:nth-child(5) { animation-delay: 0.75s; }
 
 /* Subtle hover glow for accent elements */
 .accent-glow {
@@ -90,5 +137,76 @@ main > section:nth-child(5) { animation-delay: 0.5s; }
 
 .accent-glow:hover {
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+/* Section blur-in effect */
+section {
+  @apply transition-all duration-500;
+}
+
+/* Glass card effects */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/40 dark:bg-white/5 border border-white/20 dark:border-white/10;
+}
+
+.glass-card:hover {
+  @apply bg-white/50 dark:bg-white/10 border-accent/40;
+}
+
+/* Enhanced button states */
+button {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text selection styling */
+::selection {
+  @apply bg-accent/30 text-zinc-900 dark:text-white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full transition-colors duration-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 dark:bg-zinc-600;
+}
+
+/* Floating elements */
+.float-in {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulsing glow */
+.pulse-accent {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
