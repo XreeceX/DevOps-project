@@ -1,12 +1,7 @@
 {
-  // when deploying from the repo root, ensure Vercel knows which
-  // subdirectory contains the Next.js application.  The CLI will then
-  // automatically run `npm install` and `npm run build` inside that folder.
   "rootDirectory": "showcase",
-
-  // explicitly declare where builds should be output so Vercel doesn't
-  // mistake the project for a static export and look for `out/`.
   "build": {
-    "outputDirectory": ".next"
+    "outputDirectory": "dist"
   }
 }
+

@@ -1,16 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Space Grotesk", "system-ui", "sans-serif"],
+        sans: ["system-ui", "sans-serif"],
+        display: ["system-ui", "sans-serif"],
       },
       colors: {
         accent: "#fbbf24",
@@ -21,4 +20,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
