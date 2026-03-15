@@ -30,11 +30,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-zinc-200 dark:border-white/10 bg-white/80 dark:bg-[#0a0a0f]/80 backdrop-blur-lg">
       <div className="mx-auto max-w-6xl px-6 flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-amber-400 flex items-center justify-center">
-            <span className="text-sm font-bold text-black">⚙️</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center">
+            <span className="text-lg">🔍</span>
           </div>
           <h1 className="text-lg font-bold text-zinc-900 dark:text-white">
-            DevOps Dashboard
+            Fraud Detection
           </h1>
         </div>
 
