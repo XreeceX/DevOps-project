@@ -1,7 +1,6 @@
 {
   "rootDirectory": "showcase",
-  "build": {
-    "outputDirectory": "dist"
-  }
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
 
