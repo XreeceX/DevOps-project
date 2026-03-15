@@ -1,0 +1,14 @@
+# Vercel should ignore these directories
+.next
+out
+.git
+.github
+node_modules
+npm-debug.log
+.vercel
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
