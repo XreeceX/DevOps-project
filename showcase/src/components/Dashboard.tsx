@@ -63,11 +63,11 @@ const VISUALIZATIONS = [
 const TECH_STACK = [
   { label: 'ML Framework', value: 'Scikit-learn' },
   { label: 'Imbalance Handling', value: 'SMOTE' },
-  { label: 'Model', value: 'Random Forest (100 estimators)' },
+  { label: 'Model', value: 'Random Forest' },
   { label: 'Data Processing', value: 'Pandas & NumPy' },
-  { label: 'Visualization', value: 'Matplotlib & Seaborn' },
+  { label: 'Visualization', value: 'Matplotlib' },
   { label: 'Containerization', value: 'Docker' },
-  { label: 'Frontend', value: 'React + Vite + TailwindCSS' },
+  { label: 'Frontend', value: 'React + Vite' },
   { label: 'Deployment', value: 'Vercel' },
 ]
 
@@ -107,69 +107,25 @@ const KEY_FEATURES = [
 export default function Dashboard() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-zinc-50 dark:from-[#0a0a0f] dark:to-zinc-900/50">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        {/* Hero Section */}
-        <section className="mb-24 relative">
-          <div className="absolute -inset-x-20 -top-20 h-96 bg-gradient-to-b from-blue-500/10 to-transparent rounded-full blur-3xl -z-10 dark:from-blue-500/5" />
-
-          <div className="space-y-6">
-            <div className="inline-block">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-300 dark:border-blue-700">
-                <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse" />
-                <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">Machine Learning Project</p>
-              </div>
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Overview / Key Features Section */}
+        <section id="overview" className="py-20 border-b border-zinc-200 dark:border-white/10">
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 mb-6">
+              <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">PROJECT OVERVIEW</span>
             </div>
-
-            <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
-              Fraud Transaction<br />Detection System
-            </h1>
-
-            <p className="text-lg text-zinc-700 dark:text-zinc-400 max-w-2xl">
-              An advanced machine learning system that detects fraudulent transactions using Random Forest classification with SMOTE for handling imbalanced datasets.
-            </p>
-          </div>
-        </section>
-
-        {/* Key Metrics Section */}
-        <section className="mb-24">
-          <div className="mb-12">
-            <h2 className="section-title">Model Performance Metrics</h2>
-            <p className="section-subtitle">Key performance indicators from the trained models</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {METRICS.map((metric) => (
-              <div key={metric.label} className="card p-6 hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">{metric.icon}</div>
-                <p className="text-sm uppercase tracking-widest font-semibold text-zinc-600 dark:text-zinc-400">
-                  {metric.label}
-                </p>
-                <p className="text-2xl font-bold text-zinc-900 dark:text-white mt-2">
-                  {metric.value}
-                </p>
-                <p className="text-xs text-zinc-500 dark:text-zinc-500 mt-2">
-                  {metric.subtitle}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Key Features Section */}
-        <section className="mb-24">
-          <div className="mb-12">
-            <h2 className="section-title">Key Features</h2>
-            <p className="section-subtitle">What makes this project stand out</p>
+            <h2 className="section-title">Project Highlights</h2>
+            <p className="section-subtitle">What makes this fraud detection system production-grade</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {KEY_FEATURES.map((feature) => (
-              <div key={feature.title} className="card p-8">
+              <div key={feature.title} className="card p-8 hover:shadow-lg transition-all">
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-600 dark:text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -177,75 +133,86 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Model Comparison Section */}
-        <section className="mb-24">
-          <div className="mb-12">
-            <h2 className="section-title">SMOTE Impact Analysis</h2>
-            <p className="section-subtitle">Comparison of model performance with and without SMOTE data balancing</p>
+        {/* Key Metrics Section */}
+        <section id="metrics" className="py-20 border-b border-zinc-200 dark:border-white/10">
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 mb-6">
+              <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">PERFORMANCE DATA</span>
+            </div>
+            <h2 className="section-title">Model Performance Metrics</h2>
+            <p className="section-subtitle">Key performance indicators from the trained models</p>
           </div>
 
-          <div className="card p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            {METRICS.map((metric) => (
+              <div key={metric.label} className="card p-6 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-4">{metric.icon}</div>
+                <p className="text-xs uppercase tracking-widest font-semibold text-zinc-600 dark:text-zinc-400 mb-2">
+                  {metric.label}
+                </p>
+                <p className="text-3xl font-bold text-zinc-900 dark:text-white mb-1">
+                  {metric.value}
+                </p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-500">
+                  {metric.subtitle}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* SMOTE Comparison Table */}
+          <div className="card p-8 overflow-hidden">
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-6">SMOTE Impact Analysis</h3>
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-zinc-200 dark:border-zinc-700">
-                    <th className="text-left py-4 px-4 font-semibold text-zinc-900 dark:text-white">Metric</th>
-                    <th className="text-left py-4 px-4 font-semibold text-zinc-900 dark:text-white">Without SMOTE</th>
-                    <th className="text-left py-4 px-4 font-semibold text-zinc-900 dark:text-white">With SMOTE</th>
-                    <th className="text-left py-4 px-4 font-semibold text-zinc-900 dark:text-white">Improvement</th>
+                    <th className="text-left py-3 px-4 font-semibold text-zinc-900 dark:text-white">Metric</th>
+                    <th className="text-left py-3 px-4 font-semibold text-zinc-900 dark:text-white">Without SMOTE</th>
+                    <th className="text-left py-3 px-4 font-semibold text-zinc-900 dark:text-white">With SMOTE</th>
+                    <th className="text-left py-3 px-4 font-semibold text-zinc-900 dark:text-white">Change</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-4 px-4 text-zinc-700 dark:text-zinc-300">Accuracy</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">70.25%</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">68.75%</td>
-                    <td className="py-4 px-4 text-red-600">-1.50%</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-4 px-4 text-zinc-700 dark:text-zinc-300">Precision (macro)</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">35.13%</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">41.20%</td>
-                    <td className="py-4 px-4 text-green-600">+6.07%</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-4 px-4 text-zinc-700 dark:text-zinc-300">Recall (macro)</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">50.00%</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">49.17%</td>
-                    <td className="py-4 px-4 text-red-600">-0.83%</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-4 px-4 text-zinc-700 dark:text-zinc-300">F1-Score (macro)</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">41.26%</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">41.50%</td>
-                    <td className="py-4 px-4 text-green-600">+0.24%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 text-zinc-700 dark:text-zinc-300">AUC-ROC</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">0.5074</td>
-                    <td className="py-4 px-4 text-zinc-900 dark:text-white font-semibold">0.5102</td>
-                    <td className="py-4 px-4 text-green-600">+0.0028</td>
-                  </tr>
+                  {[
+                    { metric: 'Accuracy', without: '70.25%', with: '68.75%', change: '-1.50%', good: false },
+                    { metric: 'Precision (macro)', without: '35.13%', with: '41.20%', change: '+6.07%', good: true },
+                    { metric: 'Recall (macro)', without: '50.00%', with: '49.17%', change: '-0.83%', good: false },
+                    { metric: 'F1-Score (macro)', without: '41.26%', with: '41.50%', change: '+0.24%', good: true },
+                    { metric: 'AUC-ROC', without: '0.5074', with: '0.5102', change: '+0.0028', good: true },
+                  ].map((row) => (
+                    <tr key={row.metric} className="border-b border-zinc-100 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-white/5">
+                      <td className="py-3 px-4 text-zinc-700 dark:text-zinc-300">{row.metric}</td>
+                      <td className="py-3 px-4 text-zinc-900 dark:text-white font-semibold">{row.without}</td>
+                      <td className="py-3 px-4 text-zinc-900 dark:text-white font-semibold">{row.with}</td>
+                      <td className={`py-3 px-4 font-semibold ${row.good ? 'text-green-600' : 'text-orange-600'}`}>
+                        {row.change}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-6">
-              <strong>Key Insight:</strong> SMOTE improves precision by 6.07%, helping reduce false positives when identifying fraud. The slight accuracy trade-off is acceptable for better fraud detection reliability.
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
+              <strong>Key Insight:</strong> SMOTE improves precision by 6.07%, helping reduce false positives in fraud detection. The slight accuracy trade-off is acceptable for better fraud detection reliability in production.
             </p>
           </div>
         </section>
 
         {/* Visualizations Section */}
-        <section className="mb-24">
-          <div className="mb-12">
+        <section id="visualizations" className="py-20 border-b border-zinc-200 dark:border-white/10">
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 mb-6">
+              <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">ANALYSIS</span>
+            </div>
             <h2 className="section-title">Model Visualizations</h2>
             <p className="section-subtitle">Detailed analysis charts and performance representations</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {VISUALIZATIONS.map((viz) => (
-              <div key={viz.title} className="card overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-zinc-100 dark:bg-zinc-800 relative overflow-hidden">
+              <div key={viz.title} className="card overflow-hidden hover:shadow-lg transition-all">
+                <div className="aspect-video bg-zinc-200 dark:bg-zinc-700 relative overflow-hidden">
                   <img
                     src={viz.image}
                     alt={viz.title}
@@ -256,7 +223,7 @@ export default function Dashboard() {
                   <h3 className="font-bold text-zinc-900 dark:text-white mb-2">
                     {viz.title}
                   </h3>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     {viz.description}
                   </p>
                 </div>
@@ -266,66 +233,31 @@ export default function Dashboard() {
         </section>
 
         {/* Technology Stack */}
-        <section className="mb-24">
-          <div className="mb-12">
-            <h2 className="section-title">Technology Stack</h2>
-            <p className="section-subtitle">Tools and frameworks used in this project</p>
+        <section id="tech-stack" className="py-20">
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 mb-6">
+              <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">TECH STACK</span>
+            </div>
+            <h2 className="section-title">Technology & Tools</h2>
+            <p className="section-subtitle">Built with industry-standard tools and frameworks</p>
           </div>
 
           <div className="card p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {TECH_STACK.map((item) => (
-                <div key={item.label} className="space-y-2">
-                  <p className="text-sm uppercase tracking-widest font-semibold text-zinc-600 dark:text-zinc-400">
+                <div key={item.label} className="flex flex-col">
+                  <p className="text-xs uppercase tracking-widest font-semibold text-zinc-600 dark:text-zinc-400 mb-3">
                     {item.label}
                   </p>
-                  <p className="text-lg font-bold text-zinc-900 dark:text-white">
+                  <p className="text-lg font-bold text-zinc-900 dark:text-white mb-3">
                     {item.value}
                   </p>
-                  <div className="h-1 w-8 bg-blue-600 rounded-full" />
+                  <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        {/* Project Info */}
-        <section className="mb-16">
-          <div className="mb-12">
-            <h2 className="section-title">About This Project</h2>
-          </div>
-
-          <div className="card p-8 space-y-4">
-            <div>
-              <h3 className="font-bold text-zinc-900 dark:text-white mb-2">Objective</h3>
-              <p className="text-zinc-700 dark:text-zinc-300">
-                Build and compare machine learning models for detecting fraudulent transactions, with emphasis on handling imbalanced datasets using SMOTE (Synthetic Minority Over-sampling Technique).
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-zinc-900 dark:text-white mb-2">Approach</h3>
-              <ul className="text-zinc-700 dark:text-zinc-300 space-y-2 list-disc list-inside">
-                <li>Data preprocessing: Categorical encoding and feature engineering</li>
-                <li>Class imbalance handling: Comparing standard vs SMOTE-based approaches</li>
-                <li>Random Forest classification with 100 estimators and class weighting</li>
-                <li>Comprehensive evaluation: Accuracy, Precision, Recall, F1-Score, AUC-ROC</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-zinc-900 dark:text-white mb-2">Results</h3>
-              <p className="text-zinc-700 dark:text-zinc-300">
-                The SMOTE-enhanced model improved precision by 6.07% in detecting fraudulent transactions, demonstrating the effectiveness of handling class imbalance in binary classification tasks.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="border-t border-zinc-200 dark:border-white/10 pt-12 pb-6">
-          <p className="text-sm text-zinc-700 dark:text-zinc-600">
-            © 2026 Fraud Detection Project. Built with Python, Scikit-learn, React + Vite + TailwindCSS
-          </p>
-        </footer>
       </div>
     </main>
   )

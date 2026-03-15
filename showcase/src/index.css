@@ -1,28 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased text-zinc-900 dark:text-white bg-white dark:bg-[#0a0a0f] transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors duration-200;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-black transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 active:scale-95 transition-all duration-200 no-underline;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-lg border border-zinc-300 dark:border-white/20 px-4 py-2 text-sm font-semibold transition-all duration-300 hover:border-accent/60 hover:bg-accent/5 dark:hover:bg-white/5;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-white font-semibold text-sm hover:bg-zinc-100 dark:hover:bg-white/5 active:scale-95 transition-all duration-200 no-underline;
   }
 
   .card {
-    @apply relative overflow-hidden rounded-xl border border-zinc-200 dark:border-white/10 bg-white/50 dark:bg-white/[0.05] backdrop-blur-sm transition-all duration-300 hover:border-accent/50 dark:hover:border-accent/30;
+    @apply relative overflow-hidden rounded-xl border border-zinc-200 dark:border-white/10 bg-white/40 dark:bg-white/[0.02] backdrop-blur-md transition-all duration-300 hover:border-zinc-300 dark:hover:border-white/20 hover:shadow-lg;
   }
 
   .section-header {
@@ -30,10 +65,65 @@
   }
 
   .section-title {
-    @apply font-bold text-3xl lg:text-4xl text-zinc-900 dark:text-white;
+    @apply font-bold text-3xl lg:text-4xl text-zinc-900 dark:text-white tracking-tight;
   }
 
   .section-subtitle {
-    @apply text-lg text-zinc-700 dark:text-zinc-400;
+    @apply text-base lg:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed;
+  }
+
+  .underline-accent {
+    @apply relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full;
+  }
+
+  /* Smooth transitions */
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  button, a {
+    @apply will-change-transform;
+  }
+}
+
+@layer utilities {
+  .smooth-scroll {
+    @apply scroll-smooth;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 dark:bg-white/5;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
