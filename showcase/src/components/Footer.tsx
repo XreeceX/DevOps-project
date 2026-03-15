@@ -10,29 +10,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-200 dark:border-white/10 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-6">
-        {/* CTA Section */}
-        <div className="mb-16 rounded-2xl bg-gradient-to-br from-blue-50 dark:from-blue-950/40 to-purple-50 dark:to-purple-950/40 border border-blue-200/50 dark:border-blue-800/30 p-8 md:p-12">
-          <div className="space-y-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">
-              Explore More Projects
-            </h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-              Check out my portfolio for more machine learning, AI, and full-stack projects.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a
-                href="https://reece-rodrigues.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                <span>View Full Portfolio</span>
-                <span>→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Links Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
