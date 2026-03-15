@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "cd showcase && npm install && npm run build",
-  "outputDirectory": "showcase/dist",
-  "framework": "vite",
-  "public": false
-}
-
-
